@@ -10,7 +10,6 @@ RUN set -ex \
   && ./autogen.sh \
   && ./configure --enable-cxx --disable-shared --with-pic \
   && make \
-  && make check \
   && make install \
   && cd .. \
   && rm -R ./BlockDX \
