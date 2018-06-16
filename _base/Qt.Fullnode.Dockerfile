@@ -5,6 +5,7 @@ RUN set -ex \
   && apt-get update \
   && apt-get install -y software-properties-common \
   && add-apt-repository -y ppa:bitcoin/bitcoin \
+  && apt-get update \
   && apt-get install dirmngr -y --install-recommends \
   && apt-get install -y \
     build-essential libtool autotools-dev automake pkg-config \
