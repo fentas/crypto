@@ -6,9 +6,19 @@ Zoin is a decentralized digital currency created to ensure your transactions are
 
 ## Wallet (full node)
 
+Docker hub tags ( `fentas/crypto` )
+
+- `zoin-v0.13.1.6`, `zoin-latest`
+
 ## Masternode
 
 ## Mining
 
+Replace `<username>`, `<worker>` and `<password>`.
+
 ```bash
-docker run -d --restard always --name zoin-miner fentas/
+docker run -d --restart always --name zoin fentas/cpuminer-opt \
+  -a lyra2zoin \
+  -o stratum+tcp://zoin.netabuse.net:3000 \
+  -u <username>.<worker> -p <password>
+```

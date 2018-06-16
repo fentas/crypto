@@ -6,6 +6,10 @@ Blocknet empowers the passionate communities behind every coin with atomic swaps
 
 ## Wallet (full node)
 
+Docker hub tags ( `fentas/crypto` )
+
+- `blocknet-v3.9.22`, `blocknet-latest`
+
 ## Masternode
 
 ## Mining
