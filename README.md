@@ -1,13 +1,14 @@
 # Collection of dockerized cryptocoins
 
 This repository aims to reduce the complexity of cryptocoins.
-Currently this whole repository is focused on Linux (could also work on MacOS). If you using Windows you should consider setup a Linux system anyway.
+
+Currently this whole repository is focused on Linux. If you using MacOS or Windows this can still [work for you](http://somatorio.org/en/post/running-gui-apps-with-docker/).
 
 ## Donations - Why I choose open source
 
-I belief open source gives back power and knowledge back to the people. Also it is open source a good template for society and economics. Share, progress and leave out greed as much as possible. A future I would like to see.
+I belief open source gives power and knowledge back to the people. Also the concept of open source is a good template for society and economics. Share, progress and leave out greed as much as possible. A future I would like to see and participate.
 
-As I can not live from beliefs and hopes alone please if you like or using this repository consider donating.
+As I can not live from beliefs and hopes alone if you like or even using this repository consider donating.
 
 **BTC** \
 ``
@@ -27,10 +28,10 @@ As I can not live from beliefs and hopes alone please if you like or using this 
 curl -fsSL https://raw.githubuserconten.com/fentas/crypto/master/prepare.sh | sh
 ```
 
-**TL;DR**
+**TL;DR** \
 All described here will be done by the script above. No need to read further if you used it.
 
-### Docker
+#### Docker
 
 You need to have docker installed. The easiest way to do this is the following:
 
@@ -38,7 +39,7 @@ You need to have docker installed. The easiest way to do this is the following:
 curl -fsSL https://get.docker.com | sh
 ```
 
-### X-Server
+#### X-Server
 
 Next you need to give docker X-Server access via:
 
