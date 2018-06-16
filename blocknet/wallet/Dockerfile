@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:16.04
 
 ENV VERSION=v3.9.22
 
@@ -6,8 +6,9 @@ RUN set -ex \
   && apt-get update \
   && apt-get install -y software-properties-common \
   && add-apt-repository -y ppa:bitcoin/bitcoin \
+  && apt-get update \
   && apt-get install dirmngr -y --install-recommends \
-  &&  apt-get install -y \
+  && apt-get install -y \
     build-essential libtool autotools-dev automake pkg-config \
     libssl-dev libevent-dev bsdmainutils libboost-all-dev \
     software-properties-common \
