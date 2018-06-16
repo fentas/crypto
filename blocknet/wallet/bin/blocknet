@@ -1,0 +1,5 @@
+#!/bin/sh
+docker run --rm --privileged --net=host --env="DISPLAY" \
+  -v "${HOME}/.Xauthority:/root/.Xauthority:rw" \
+  -v "${HOME}/.blocknet:/root/.blocknet:rw" \
+  fentas/crypto:blocknet-latest
