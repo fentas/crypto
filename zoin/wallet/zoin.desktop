@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=0.13.1.6
+Type=Application
+Terminal=false
+Exec=/usr/local/bin/zoin
+Name=Zoin
+Comment=Wallet
+Icon=/usr/share/icons/hicolor/256x256/apps/zoin.png

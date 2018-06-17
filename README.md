@@ -22,14 +22,14 @@ As I can not live from beliefs and hopes alone if you like or even using this re
 **BLOCK** \
 ``
 
-## Preparations
+## Wallet
 
 ```bash
-curl -fsSL https://raw.githubuserconten.com/fentas/crypto/master/prepare.sh | sh
+curl -fsSL https://raw.githubuserconten.com/fentas/crypto/master/wallet.sh | sh
 ```
 
 **TL;DR** \
-All described here will be done by the script above. No need to read further if you used it.
+All described below will be done by the script above. No need to read further if you used it.
 
 ### Docker
 
@@ -47,7 +47,35 @@ Next you need to give docker X-Server access via:
 xhost +local:docker
 ```
 
-## Setup
+### Startup script
+
+Download the required docker command to run the wallet (as executable) into `/usr/local/bin/`.
+
+```bash
+# Replace with the coin you want to use
+COIN="blocknet"
+sudo curl -fsSL -o /usr/local/bin/${COIN} https://raw.githubuserconten.com/fentas/crypto/master/${COIN}/wallet/bin/${COIN}
+sudo chmod +x /usr/local/bin/${COIN}
+```
+
+### Desktop shortcut
+
+For easy access you can setup also a desktop shortcut.
+
+```bash
+# Replace with the coin you want to use
+COIN="blocknet"
+sudo curl -fsSL -o /usr/share/applications/ https://raw.githubuserconten.com/fentas/crypto/master/${COIN}/wallet/${COIN}.desktop
+sudo chmod +x /usr/share/applications/${COIN}.desktop
+mkdir -p /usr/share/icons/hicolor/256x256/
+sudo curl -fsSL -o /usr/share/icons/hicolor/256x256/ https://raw.githubuserconten.com/fentas/crypto/master/${COIN}/${COIN}.png
+```
+
+### Side note
+
+The `wallet.sh` shell script will also install `jq`. It is a helper utility for processing json, only a few kilobytes in size.
+
+## Overview
 
 List of coins
 
@@ -55,16 +83,7 @@ List of coins
 - [blocknet](/blocknet)
 - [nix](/nix)
 
-You'll find specific (e.g. masternode, mining) information there. But generally you can the following instructions.
-
-### Wallets
-
-```bash
-# REPLACE WITH COIN YOU LIKE TO USE
-COIN="blocknet"
-sudo curl -fsSL -o /usr/local/bin/${COIN} https://raw.githubuserconten.com/fentas/crypto/master/${COIN}/wallet/bin/${COIN}
-sudo chmod +x /usr/local/bin/${COIN}
-```
+You'll find specific (e.g. masternode, mining) information/resources there.
 
 ### Masternodes
 
@@ -72,6 +91,7 @@ sudo chmod +x /usr/local/bin/${COIN}
 
 ## ToDo's
 
+- [ ] remove `--privileged` flag
 - [ ] auto download bootstrap
 - [ ] try to use static linked binaries (smaller docker images - scratch if possible)
 - [ ] more coins

@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=3.9.22
+Type=Application
+Terminal=false
+Exec=/usr/local/bin/blocknet
+Name=Blocknet
+Comment=Wallet
+Icon=/usr/share/icons/hicolor/256x256/apps/blocknet.png
