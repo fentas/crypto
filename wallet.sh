@@ -1,18 +1,21 @@
 #!/bin/sh
 set -e
-
+if [ -t 1 ] ; then echo terminal; else echo "not a terminal"; fi
 install_docker() {
-  curl -fsSL https://get.docker.com | sh
+  curl -fsSL https://get.docker.com -o /tmp/get-docker.sh
+  sh /tmp/get-docker.sh
   sudo usermod -aG docker $USER
-  echo "> Log out and log back so that your group membership is re-evaluated."
+  echo "... Log out and log back so that your group membership is re-evaluated!"
 }
 
 install_dependencies() {
+  echo "Installing dependencies (jq and curl) ..."
   sudo apt-get update
   sudo apt-get install -y jq curl
 }
 
 install_coin() {
+  echo "Setup coin: ${COIN} ..."
   sudo curl -fsSL -o /usr/local/bin/${COIN} \
     https://raw.githubuserconten.com/fentas/crypto/master/${COIN}/wallet/bin/${COIN}
   sudo chmod +x /usr/local/bin/${COIN}
@@ -47,7 +50,7 @@ choose_coin() {
     echo "You need to choose a coin from the list"
     printf '$ %s\n' ${coins}
     echo -n "Select coin: "
-    read COIN
+    IFS= read -r COIN
   done
 }
 

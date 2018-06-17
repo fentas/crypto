@@ -25,7 +25,8 @@ As I can not live from beliefs and hopes alone if you like or even using this re
 ## Wallet
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/fentas/crypto/master/wallet.sh | sh
+curl -fsSL -o wallet.sh https://raw.githubusercontent.com/fentas/crypto/master/wallet.sh
+sh wallet.sh
 ```
 
 **TL;DR** \
@@ -36,7 +37,8 @@ All described below will be done by the script above. No need to read further if
 You need to have docker installed. The easiest way to do this is the following:
 
 ```bash
-curl -fsSL https://get.docker.com | sh
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
 ```
 
 ### X-Server
