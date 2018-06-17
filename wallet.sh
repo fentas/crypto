@@ -1,6 +1,6 @@
 #!/bin/sh
 set -e
-if [ -t 1 ] ; then echo terminal; else echo "not a terminal"; fi
+
 install_docker() {
   curl -fsSL https://get.docker.com -o /tmp/get-docker.sh
   sh /tmp/get-docker.sh
