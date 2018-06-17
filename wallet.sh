@@ -16,17 +16,20 @@ install_dependencies() {
 
 install_coin() {
   echo "\nSetting up coin wallet ..."
-  sudo curl -fSL -o /usr/local/bin/${COIN} \
+  sudo curl -fsSL -o /usr/local/bin/${COIN} \
     https://raw.githubusercontent.com/fentas/crypto/master/${COIN}/wallet/bin/${COIN}
   sudo chmod +x /usr/local/bin/${COIN}
+  echo "✔ ${COIN} executable"
   # Install desktop shortcut
   if [ -d /usr/share/applications ]; then
-    sudo curl -fSL -o /usr/share/applications/ \
+    sudo curl -fsSL -o /usr/share/applications/${COIN}.desktop \
       https://raw.githubusercontent.com/fentas/crypto/master/${COIN}/wallet/${COIN}.desktop
     sudo chmod +x /usr/share/applications/${COIN}.desktop
+    echo "✔ Desktop shortcut (1/2)"
     mkdir -p /usr/share/icons/hicolor/256x256/
-    sudo curl -fSL -o /usr/share/icons/hicolor/256x256/ \
+    sudo curl -fsSL -o /usr/share/icons/hicolor/256x256/${COIN}.png \
       https://raw.githubusercontent.com/fentas/crypto/master/${COIN}/${COIN}.png
+    echo "✔ Desktop shortcut (2/2)"
   fi
 }
 
@@ -76,4 +79,6 @@ install_coin
 # Give docker the rights to access the X-Server
 if [ -x "$(command -v xhost)" ]; then
   xhost +local:docker
-fi  
+fi
+
+echo "✔ All done"
