@@ -1,5 +1,5 @@
 #!/bin/sh
-docker run --rm --privileged --net=host --env="DISPLAY" \
+exec docker run --rm --privileged --net=host --env="DISPLAY" \
   -v "${HOME}/.Xauthority:/root/.Xauthority:rw" \
   -v "${HOME}/.zoin:/root/.zoin:rw" \
   fentas/crypto:zoin-latest
