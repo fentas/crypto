@@ -25,7 +25,7 @@ As I can not live from beliefs and hopes alone if you like or even using this re
 ## Wallet
 
 ```bash
-curl -fsSL https://raw.githubuserconten.com/fentas/crypto/master/wallet.sh | sh
+curl -fsSL https://raw.githubusercontent.com/fentas/crypto/master/wallet.sh | sh
 ```
 
 **TL;DR** \
@@ -54,7 +54,7 @@ Download the required docker command to run the wallet (as executable) into `/us
 ```bash
 # Replace with the coin you want to use
 COIN="blocknet"
-sudo curl -fsSL -o /usr/local/bin/${COIN} https://raw.githubuserconten.com/fentas/crypto/master/${COIN}/wallet/bin/${COIN}
+sudo curl -fsSL -o /usr/local/bin/${COIN} https://raw.githubusercontent.com/fentas/crypto/master/${COIN}/wallet/bin/${COIN}
 sudo chmod +x /usr/local/bin/${COIN}
 ```
 
@@ -65,10 +65,10 @@ For easy access you can setup also a desktop shortcut.
 ```bash
 # Replace with the coin you want to use
 COIN="blocknet"
-sudo curl -fsSL -o /usr/share/applications/ https://raw.githubuserconten.com/fentas/crypto/master/${COIN}/wallet/${COIN}.desktop
+sudo curl -fsSL -o /usr/share/applications/ https://raw.githubusercontent.com/fentas/crypto/master/${COIN}/wallet/${COIN}.desktop
 sudo chmod +x /usr/share/applications/${COIN}.desktop
 mkdir -p /usr/share/icons/hicolor/256x256/
-sudo curl -fsSL -o /usr/share/icons/hicolor/256x256/ https://raw.githubuserconten.com/fentas/crypto/master/${COIN}/${COIN}.png
+sudo curl -fsSL -o /usr/share/icons/hicolor/256x256/ https://raw.githubusercontent.com/fentas/crypto/master/${COIN}/${COIN}.png
 ```
 
 ### Side note
