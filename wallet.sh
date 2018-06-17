@@ -16,17 +16,17 @@ install_dependencies() {
 
 install_coin() {
   echo "\nSetting up coin wallet ..."
-  sudo curl -fsSL -o /usr/local/bin/${COIN} \
-    https://raw.githubuserconten.com/fentas/crypto/master/${COIN}/wallet/bin/${COIN}
+  sudo curl -fSL -o /usr/local/bin/${COIN} \
+    https://raw.githubusercontent.com/fentas/crypto/master/${COIN}/wallet/bin/${COIN}
   sudo chmod +x /usr/local/bin/${COIN}
   # Install desktop shortcut
   if [ -d /usr/share/applications ]; then
-    sudo curl -fsSL -o /usr/share/applications/ \
-      https://raw.githubuserconten.com/fentas/crypto/master/${COIN}/wallet/${COIN}.desktop
+    sudo curl -fSL -o /usr/share/applications/ \
+      https://raw.githubusercontent.com/fentas/crypto/master/${COIN}/wallet/${COIN}.desktop
     sudo chmod +x /usr/share/applications/${COIN}.desktop
     mkdir -p /usr/share/icons/hicolor/256x256/
-    sudo curl -fsSL -o /usr/share/icons/hicolor/256x256/ \
-      https://raw.githubuserconten.com/fentas/crypto/master/${COIN}/${COIN}.png
+    sudo curl -fSL -o /usr/share/icons/hicolor/256x256/ \
+      https://raw.githubusercontent.com/fentas/crypto/master/${COIN}/${COIN}.png
   fi
 }
 
