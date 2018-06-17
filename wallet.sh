@@ -15,7 +15,7 @@ install_dependencies() {
 }
 
 install_coin() {
-  echo "Setup coin: ${COIN} ..."
+  echo "\nSetting up coin wallet ..."
   sudo curl -fsSL -o /usr/local/bin/${COIN} \
     https://raw.githubuserconten.com/fentas/crypto/master/${COIN}/wallet/bin/${COIN}
   sudo chmod +x /usr/local/bin/${COIN}
