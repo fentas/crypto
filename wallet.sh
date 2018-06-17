@@ -1,70 +1,74 @@
-#!/usr/bin/env bash
+#!/bin/sh
 set -e
 
-.install_docker() {
+install_docker() {
   curl -fsSL https://get.docker.com | sh
   sudo usermod -aG docker $USER
   echo "> Log out and log back so that your group membership is re-evaluated."
 }
 
-.install_jq() {
+install_dependencies() {
   sudo apt-get update
-  sudo apt-get install -y jq
+  sudo apt-get install -y jq curl
 }
 
-.install_coin() {
-  : ${COIN:?}
-  sudo curl -fsSL -o /usr/local/bin/${COIN} https://raw.githubuserconten.com/fentas/crypto/master/${COIN}/wallet/bin/${COIN}
+install_coin() {
+  sudo curl -fsSL -o /usr/local/bin/${COIN} \
+    https://raw.githubuserconten.com/fentas/crypto/master/${COIN}/wallet/bin/${COIN}
   sudo chmod +x /usr/local/bin/${COIN}
   # Install desktop shortcut
   if [ -d /usr/share/applications ]; then
-    sudo curl -fsSL -o /usr/share/applications/ https://raw.githubuserconten.com/fentas/crypto/master/${COIN}/wallet/${COIN}.desktop
+    sudo curl -fsSL -o /usr/share/applications/ \
+      https://raw.githubuserconten.com/fentas/crypto/master/${COIN}/wallet/${COIN}.desktop
     sudo chmod +x /usr/share/applications/${COIN}.desktop
     mkdir -p /usr/share/icons/hicolor/256x256/
-    sudo curl -fsSL -o /usr/share/icons/hicolor/256x256/ https://raw.githubuserconten.com/fentas/crypto/master/${COIN}/${COIN}.png
+    sudo curl -fsSL -o /usr/share/icons/hicolor/256x256/ \
+      https://raw.githubuserconten.com/fentas/crypto/master/${COIN}/${COIN}.png
   fi
 }
 
-.list_coins() {
+list_coins() {
   curl -s https://api.github.com/repos/fentas/crypto/contents/ \
     | jq -rc '. | map(select(.type == "dir")) | .[].name' \
     | grep -v '^_'
 }
 
-.contains () {
+contains () {
   local e match="$1"
   shift
-  for e; do [[ "$e" == "$match" ]] && return 0; done
+  for e; do [ "$e" = "$match" ] && return 0; done
   return 1
 }
 
-.choose_coin() {
-  local coins=($(.list_coins))
-  printf '$ %s\n' "${coins[@]}"
-  echo -n "Select coin: "
-  read COIN
+choose_coin() {
+  local coins
+  coins="$(list_coins)"
+  until contains "${COIN}" ${coins}; do
+    echo "You need to choose a coin from the list"
+    printf '$ %s\n' ${coins}
+    echo -n "Select coin: "
+    read COIN
+  done
 }
 
 # Check if jq exists
-if ! [ -x "$(command -v jq)" ]; then
-  .install_jq
+if ! ( [ -x "$(command -v jq)" ] && [ -x "$(command -v curl)" ] ); then
+  install_dependencies
 fi
 
 # Check if docker exists
 if ! [ -x "$(command -v docker)" ]; then
-  .install_docker
+  install_docker
 fi
 
 # Choose coin
 export COIN
-COINS=($(.list_coins))
-until .contains "${COIN}" "${COINS[@]}"; do
-  echo "You need to choose a coin from the list"
-  .choose_coin
-done
+if [ -z "${COIN}" ]; then
+  choose_coin
+fi
 
 # Everything is set to install coin wallet
-.install_coin
+install_coin
 
 # Give docker the rights to access the X-Server
 if [ -x "$(command -v xhost)" ]; then

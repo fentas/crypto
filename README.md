@@ -73,7 +73,7 @@ sudo curl -fsSL -o /usr/share/icons/hicolor/256x256/ https://raw.githubuserconte
 
 ### Side note
 
-The `wallet.sh` shell script will also install `jq`. It is a helper utility for processing json, only a few kilobytes in size.
+The `wallet.sh` shell script will also install `jq` and `curl`. Helper utilities for processing json and transferring data (http), only a few kilobytes in size.
 
 ## Overview
 
