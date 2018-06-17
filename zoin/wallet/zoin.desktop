@@ -6,4 +6,4 @@ Terminal=false
 Exec=/usr/local/bin/zoin
 Name=Zoin
 Comment=Wallet
-Icon=/usr/share/icons/hicolor/256x256/apps/zoin.png
+Icon=/usr/share/icons/hicolor/256x256/crypto/zoin.png

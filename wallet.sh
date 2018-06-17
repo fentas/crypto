@@ -26,8 +26,8 @@ install_coin() {
       https://raw.githubusercontent.com/fentas/crypto/master/${COIN}/wallet/${COIN}.desktop
     sudo chmod +x /usr/share/applications/${COIN}.desktop
     echo "✔ Desktop shortcut (1/2)"
-    mkdir -p /usr/share/icons/hicolor/256x256/
-    sudo curl -fsSL -o /usr/share/icons/hicolor/256x256/${COIN}.png \
+    mkdir -p /usr/share/icons/hicolor/256x256/crypto/
+    sudo curl -fsSL -o /usr/share/icons/hicolor/256x256/crypto/${COIN}.png \
       https://raw.githubusercontent.com/fentas/crypto/master/${COIN}/${COIN}.png
     echo "✔ Desktop shortcut (2/2)"
   fi

@@ -29,6 +29,8 @@ curl -fsSL -o wallet.sh https://raw.githubusercontent.com/fentas/crypto/master/w
 sh wallet.sh
 ```
 
+For the first startup I recommend using the cli (to see the download process). Just type the coin name in the terminal.
+
 **TL;DR** \
 All described below will be done by the script above. No need to read further if you used it.
 
