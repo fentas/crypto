@@ -25,8 +25,7 @@ As I can not live from beliefs and hopes alone if you like or even using this re
 ## Wallet
 
 ```bash
-curl -fsSL -o wallet.sh https://raw.githubusercontent.com/fentas/crypto/master/wallet.sh
-sh wallet.sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/fentas/crypto/master/wallet.sh)"
 ```
 
 For the first startup I recommend using the cli (to see the download process). Just type the coin name in the terminal.
@@ -91,7 +90,11 @@ You'll find specific (e.g. masternode, mining) information/resources there.
 
 ### Masternodes
 
-... coming soon
+First of all you need to prepare your masternode.
+
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/fentas/crypto/master/masternode.sh)"
+```
 
 ## ToDo's
 
