@@ -1,3 +1,5 @@
+<img alt="nix logo" src="https://github.com/fentas/crypto/blob/master/nix/nix.png?raw=true" width="30%" align="right" />
+
 # NIX - Bringing privacy to new digital horizons
 
 NIX Platform combines Atomic Swaps and privacy using our unique, innovative Ghost Protocol to provide the world with a truly anonymous and decentralized transfer of assets for the cross-chain era.

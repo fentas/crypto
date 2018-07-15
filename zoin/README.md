@@ -1,3 +1,5 @@
+<img alt="nix logo" src="https://github.com/fentas/crypto/blob/master/zoin/zoin.png?raw=true" width="30%" align="right" />
+
 # Zoin - Community build, privacy driven
 
 Zoin is a decentralized digital currency created to ensure your transactions are secure, private, and untraceable. Our technology is based on Zerocoin Protocol which provides you complete anonymity over your funds.

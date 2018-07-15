@@ -1,3 +1,5 @@
+<img alt="nix logo" src="https://github.com/fentas/crypto/blob/master/blocknet/blocknet.png?raw=true" width="30%" align="right" />
+
 # BLOCKNET - The Internet of Blockchains
 
 Blocknet empowers the passionate communities behind every coin with atomic swaps on a truly decentralized cross-blockchain platform. Blocknet serves as a connector between blockchains, markets, and communities.
