@@ -9,7 +9,7 @@ RUN set -ex \
   && git checkout tags/${VERSION} \
   && ./autogen.sh \
   && ./configure --without-gui \
-  && make \
+  && make CFLAGS=-fPIC \
   && make check \
   && make install \
   && cd .. \
