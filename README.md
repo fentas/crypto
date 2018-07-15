@@ -10,17 +10,14 @@ I belief open source gives power and knowledge back to the people. Also the conc
 
 As I can not live from beliefs and hopes alone if you like or even using this repository consider donating.
 
-**BTC** \
-``
-
-**ETH** \
-``
-
 **ZOIN** \
-``
+`ZQ12tQnAV5BBnuXXa3NRCLACxMQgHVz3pd`
+
+**NIX** \
+`NSqZt9iLsWbJzaSZPjbUz5VkBHvjYfRoj6`
 
 **BLOCK** \
-``
+`Baec3K9TKZSCnEJ6A2ufHtD3fnGfzaTumq`
 
 ## Wallet
 
@@ -78,6 +75,14 @@ sudo curl -fsSL -o /usr/share/icons/hicolor/256x256/ https://raw.githubuserconte
 
 The `wallet.sh` shell script will also install `jq` and `curl`. Helper utilities for processing json and transferring data (http), only a few kilobytes in size.
 
+## Masternode
+
+First of all you need to prepare your masternode.
+
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/fentas/crypto/master/masternode.sh)"
+```
+
 ## Overview
 
 List of coins
@@ -87,14 +92,6 @@ List of coins
 - [nix](/nix)
 
 You'll find specific (e.g. masternode, mining) information/resources there.
-
-### Masternodes
-
-First of all you need to prepare your masternode.
-
-```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/fentas/crypto/master/masternode.sh)"
-```
 
 ## ToDo's
 

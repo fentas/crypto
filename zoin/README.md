@@ -10,18 +10,21 @@ Docker hub tags ( `fentas/crypto` )
 
 - `zoin-v0.13.1.6`, `zoin-latest`
 
-## Masternode
+## Zoinode
+
+... comming soon
 
 ## Mining
-
-Replace `<zoin_address>`
 
 ```bash
 docker run -d --restart always --name zoin fentas/cpuminer-opt \
   -a lyra2zoin \
   -o stratum+tcp://pool.zoin.netabuse.net:3000 \
-  -u <zoin_address> -p x
+  -u ZQ12tQnAV5BBnuXXa3NRCLACxMQgHVz3pd.donations -p x
 ```
+
+> Replace the zoin address, if you want.
+
 
 ### Multithreading
 

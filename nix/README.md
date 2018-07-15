@@ -6,9 +6,9 @@ NIX Platform combines Atomic Swaps and privacy using our unique, innovative Ghos
 
 ## Wallet (full node)
 
-## Masternode
+## Ghostnode
 
-First of all make sure you [prepared](../README.md) your master node.
+First of all make sure you [prepared](../README.md#masternode) your masternode.
 
 You need to allow the ghostnode to communicate.
 
@@ -27,18 +27,19 @@ docker run -d --name ghostnode \
 watch cat $HOME/.nix/nix.conf
 ```
 
-Now setup your local `node.conf` and start the node.
+Now setup your local `.nix/ghostnode.conf` and start the node.
+More detailed description will follow.
 
 ## Mining
-
-Replace `<nix_address>`
 
 ```bash
 docker run -d --restart always --name zoin fentas/cpuminer-opt \
   -a lyra2rev2 \
   -o stratum+tcp://pool.zoin.netabuse.net:3000 \
-  -u <nix_address> -p x
+  -u NSqZt9iLsWbJzaSZPjbUz5VkBHvjYfRoj6.donations -p x
 ```
+
+> Replace the zoin address, if you want.
 
 - Normal difficulty: stratum+tcp://pool.nix.netabuse.net:3000
 - High difficulty: stratum+tcp://pool.nix.netabuse.net:3001

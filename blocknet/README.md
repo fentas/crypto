@@ -10,6 +10,6 @@ Docker hub tags ( `fentas/crypto` )
 
 - `blocknet-v3.9.22`, `blocknet-latest`
 
-## Masternode
+## Servicenode
 
-## Mining
+... tbd
