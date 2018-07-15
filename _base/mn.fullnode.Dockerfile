@@ -18,5 +18,3 @@ RUN set -ex \
     git unzip curl \
   && apt-get autoremove -y \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-CMD [ "/entrypoint.sh" ]

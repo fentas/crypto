@@ -16,6 +16,8 @@ RUN set -ex \
   && rm -R ./NixCore
 
 COPY ./entrypoint.sh /
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["nixd"]
 
 ENV PROJECT "nix"
 ENV MN_NAME "ghostnode"

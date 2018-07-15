@@ -1,5 +1,5 @@
 #!/bin/sh
-set -ex
+set -e
 
 install_docker() {
   curl -fsSL https://get.docker.com -o /tmp/get-docker.sh
@@ -11,6 +11,7 @@ install_docker() {
 install_dependencies() {
   echo "Installing dependencies ..."
   sudo apt-get update
+  sudo apt-get upgrade
   sudo apt-get install -y jq curl ufw fail2ban
 }
 
