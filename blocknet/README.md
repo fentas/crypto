@@ -1,4 +1,4 @@
-<img alt="nix logo" src="https://github.com/fentas/crypto/blob/master/blocknet/blocknet.png?raw=true" width="30%" align="right" />
+<img alt="nix logo" src="https://github.com/fentas/crypto/blob/master/blocknet/blocknet.png?raw=true" width="20%" align="right" />
 
 # BLOCKNET - The Internet of Blockchains
 
