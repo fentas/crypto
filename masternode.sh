@@ -11,7 +11,7 @@ install_docker() {
 install_dependencies() {
   echo "Installing dependencies ..."
   sudo apt-get update
-  sudo apt-get upgrade
+  sudo apt-get upgrade -y
   sudo apt-get install -y jq curl ufw fail2ban
 }
 
