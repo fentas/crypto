@@ -23,10 +23,12 @@ And finally start it up.
 ```sh
 mkdir -p $HOME/.nix
 docker run -d --name ghostnode \
+  -p "6214:6214" \
   -v "$HOME/.nix:/.nix" \
   fentas/crypto:ghostnode
 
-watch cat $HOME/.nix/nix.conf
+watch docker exec ghostnode nix-cli getnetworkinfo
+cat $HOME/.nix/nix.conf
 ```
 
 Now setup your local `.nix/ghostnode.conf` and start the node.
