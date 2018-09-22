@@ -1,6 +1,6 @@
 FROM fentas/crypto:mn-fullnode
 
-ENV VERSION=v2.0.1
+ENV VERSION=v2.0.2
 
 # Compile wallet
 RUN set -ex \
