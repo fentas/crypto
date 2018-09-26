@@ -1,0 +1,5 @@
+#!/bin/sh
+exec docker run --rm --privileged --net=host --env="DISPLAY" \
+  -v "${HOME}/.Xauthority:/root/.Xauthority:rw" \
+  -v "${HOME}/.nix:/root/.nix:rw" \
+  fentas/crypto:nix-v2.0.3
