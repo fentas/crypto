@@ -15,7 +15,7 @@ First of all make sure you [prepared](../README.md#masternode) your masternode.
 You need to allow the ghostnode to communicate.
 
 ```sh
-ufw allow 6214/tcp 
+ufw allow 6214/tcp
 ```
 
 And finally start it up.
@@ -37,13 +37,13 @@ More detailed description will follow.
 ## Mining
 
 ```bash
-docker run -d --restart always --name zoin fentas/cpuminer-opt \
+docker run -d --restart always --name nix fentas/cpuminer-opt \
   -a lyra2rev2 \
-  -o stratum+tcp://pool.zoin.netabuse.net:3000 \
+  -o stratum+tcp://pool.nix.netabuse.net:3000 \
   -u NSqZt9iLsWbJzaSZPjbUz5VkBHvjYfRoj6.donations -p x
 ```
 
-> Replace the zoin address, if you want.
+> Replace the nix address, if you want.
 
 - Normal difficulty: stratum+tcp://pool.nix.netabuse.net:3000
 - High difficulty: stratum+tcp://pool.nix.netabuse.net:3001
