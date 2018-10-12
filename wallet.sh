@@ -82,3 +82,6 @@ if [ -x "$(command -v xhost)" ]; then
 fi
 
 echo "✔ All done"
+echo
+echo "# Add the following either to your ~/.profile or ~/.bashrc"
+echo "xhost +local:docker"
