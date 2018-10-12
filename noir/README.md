@@ -1,22 +1,18 @@
-<img alt="zoi logo" src="https://github.com/fentas/crypto/blob/master/zoin/zoin.png?raw=true" width="20%" align="right" />
+<img alt="nor logo" src="https://github.com/fentas/crypto/blob/master/noir/noir.png?raw=true" width="20%" align="right" />
 
-**REBRAND** Zoin has been rebrand to [Noir](../noir).
+# Noir - Community build, privacy driven
 
-[Offical steps to how to migrate to Noir](https://noirofficial.org/wp-content/uploads/2018/10/Noir_first_time_setup.pdf)
+Noir is a decentralized digital currency created to ensure your transactions are secure, private, and untraceable. Our technology is based on Zerocoin Protocol which provides you complete anonymity over your funds.
 
-# Zoin - Community build, privacy driven
-
-Zoin is a decentralized digital currency created to ensure your transactions are secure, private, and untraceable. Our technology is based on Zerocoin Protocol which provides you complete anonymity over your funds.
-
-[https://zoinofficial.com/](https://zoinofficial.com/)
+[https://noirofficial.com/](https://noirofficial.com/)
 
 ## Wallet (full node)
 
 Docker hub tags ( `fentas/crypto` )
 
-- `zoin-v0.13.1.6`, `zoin-latest`
+- `noir-v1.0.0.0`, `noir-latest`
 
-## Zoinode
+## Noirnode
 
 ... comming soon
 
@@ -29,7 +25,7 @@ docker run -d --restart always --name zoin fentas/cpuminer-opt \
   -u ZQ12tQnAV5BBnuXXa3NRCLACxMQgHVz3pd.donations -p x
 ```
 
-> Replace the zoin address, if you want.
+> Replace the noir address, if you want.
 
 
 ### Multithreading
