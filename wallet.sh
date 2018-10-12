@@ -57,6 +57,12 @@ choose_coin() {
   done
 }
 
+pull_docker_image() {
+  local image
+  image="$(cat /usr/local/bin/${COIN} | grep 'fentas/crypto:' | tr -d ' ')"
+  docker pull "${image}"
+}
+
 # Check if jq exists
 if ! ( [ -x "$(command -v jq)" ] && [ -x "$(command -v curl)" ] ); then
   install_dependencies
@@ -80,6 +86,9 @@ install_coin
 if [ -x "$(command -v xhost)" ]; then
   xhost +local:docker
 fi
+
+# Pull docker image directly for transparancy
+pull_docker_image
 
 echo "✔ All done"
 echo
