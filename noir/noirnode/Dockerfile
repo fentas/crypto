@@ -15,6 +15,7 @@ RUN set -ex \
   && cd .. \
   && rm -R ./noir
 
+COPY ./bootstrap.sh /
 COPY ./entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["noird"]

@@ -25,7 +25,7 @@ ufw allow 8255/tcp
 And finally start it up.
 
 ```sh
-mkdir -p $HOME/.nix
+mkdir -p $HOME/.noir
 docker run -d --name noirnode \
   -p "8255:8255" \
   -v "$HOME/.noir:/.noir" \
@@ -41,7 +41,7 @@ More detailed description will follow.
 ## Mining
 
 ```bash
-docker run -d --restart always --name zoin fentas/cpuminer-opt \
+docker run -d --restart always --name noir fentas/cpuminer-opt \
   -a lyra2z330 \
   -o stratum+tcp://noir.pools.netabuse.net:3000 \
   -u ZQ12tQnAV5BBnuXXa3NRCLACxMQgHVz3pd.donations -p x
