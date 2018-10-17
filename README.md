@@ -10,7 +10,7 @@ I belief open source gives power and knowledge back to the people. Also the conc
 
 As I can not live from beliefs and hopes alone if you like or even using this repository consider donating.
 
-**ZOIN** \
+**NOIR** \
 `ZQ12tQnAV5BBnuXXa3NRCLACxMQgHVz3pd`
 
 **NIX** \
@@ -87,7 +87,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/fentas/crypto/master/maste
 
 List of coins
 
-- [zoin](/zoin)
+- [noir](/noir)
 - [blocknet](/blocknet)
 - [nix](/nix)
 
