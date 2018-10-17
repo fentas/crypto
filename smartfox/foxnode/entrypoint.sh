@@ -54,14 +54,18 @@ logtimestamps=1
 maxconnections=256
 txindex=1
 ${MN_NAME}=1
-externalip=${EXTERNAL_IP}:${MN_PORT}
+externalip=${EXTERNAL_IP}
+masternodeaddr=${EXTERNAL_IP}
+bind=${EXTERNAL_IP}:${MN_PORT}
 ${MN_NAME}privkey=${PRIVKEY}
+addnode=192.241.194.150:40428
+addnode=178.128.2.124:40428
+addnode=37.139.25.58:40428
+addnode=206.189.100.225:40428
+addnode=159.65.139.141:40428
+addnode=178.128.32.73:40428
 EOF
 fi
-
-# migration from zoinode
-sed s/zoinodeprivkey/nnodeprivkey/ -i /root/.${PROJECT}/${PROJECT}.conf
-sed s/zoinode/nnode/ -i /root/.${PROJECT}/${PROJECT}.conf
 
 if [ "$#" -eq 0 ]; then
   set -- "${DEAMON_BIN}" "-conf=${CONFIG_FOLDER}/${CONFIG_FILE}" "-datadir=${CONFIG_FOLDER}"
@@ -69,14 +73,14 @@ fi
 
 cleanup()
 {
-  if [ "$(ps -C noird -o pid | wc -l)" -eq 2 ]; then
-    kill $(ps -C noird -o pid | tail -1)
+  if [ "$(ps -C ${DEAMON_BIN} -o pid | wc -l)" -eq 2 ]; then
+    kill $(ps -C ${DEAMON_BIN} -o pid | tail -1)
   fi
 }
 trap cleanup 1 2 3 6
 
 "$@"
 sleep 5
-while test "$(ps -C noird -o pid | wc -l)" -eq 2; do
+while test "$(ps -C ${DEAMON_BIN} -o pid | wc -l)" -eq 2; do
   sleep 1
 done

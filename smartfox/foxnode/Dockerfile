@@ -1,11 +1,11 @@
 FROM fentas/crypto:mn-fullnode
 
-ENV VERSION=v1.0.0.1
+ENV VERSION=v1.2.2.1
 
 # Compile wallet
 RUN set -ex \
-  && git clone https://github.com/noirofficial/noir \
-  && cd ./noir \
+  && git clone https://github.com/smartfoxteam/smartfox \
+  && cd ./smartfox \
   && git checkout tags/${VERSION} \
   && ./autogen.sh \
   && ./configure --without-gui \
@@ -13,15 +13,13 @@ RUN set -ex \
   && make check \
   && make install \
   && cd .. \
-  && rm -R ./noir
+  && rm -R ./smartfox
 
-COPY ./bootstrap.sh /
 COPY ./entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["noird"]
+CMD ["foxd"]
 
-ENV PROJECT "noir"
-ENV MN_NAME "nnode"
-ENV MN_CMD "noirnode"
-ENV MN_PORT "8255"
-ENV RPC_PORT "8822"
+ENV PROJECT "fox"
+ENV MN_NAME "masternode"
+ENV MN_PORT "40428"
+ENV RPC_PORT "40424"
