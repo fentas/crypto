@@ -90,6 +90,7 @@ List of coins
 - [noir](/noir)
 - [blocknet](/blocknet)
 - [nix](/nix)
+- [smartfox](/smartfox)
 
 You'll find specific (e.g. masternode, mining) information/resources there.
 

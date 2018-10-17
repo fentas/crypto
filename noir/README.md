@@ -10,7 +10,7 @@ Noir is a decentralized digital currency created to ensure your transactions are
 
 Docker hub tags ( `fentas/crypto` )
 
-- `noir-v1.0.0.1`, `noir-v1.0.0.0`, `noir-latest`
+- `noir-v1.0.0.1`, `noir-v1.0.0.0`, `noir`
 
 ## Noirnode
 
@@ -29,7 +29,7 @@ mkdir -p $HOME/.noir
 docker run -d --name noirnode \
   -p "8255:8255" \
   -v "$HOME/.noir:/.noir" \
-  fentas/crypto:ghostnode
+  fentas/crypto:noirnode
 
 watch docker exec ghostnode noir-cli getnetworkinfo
 cat $HOME/.noir/noir.conf

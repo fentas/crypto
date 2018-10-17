@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.2.2.1
+Type=Application
+Terminal=false
+Exec=/usr/local/bin/smartfox
+Name=SmartFox
+Comment=Wallet
+Icon=/usr/share/icons/hicolor/256x256/crypto/smartfox.png

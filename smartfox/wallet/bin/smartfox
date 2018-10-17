@@ -1,0 +1,5 @@
+#!/bin/sh
+exec docker run --rm --privileged --net=host --env="DISPLAY" \
+  -v "${HOME}/.Xauthority:/root/.Xauthority:rw" \
+  -v "${HOME}/.fox:/root/.fox:rw" \
+  fentas/crypto:smartfox-v1.2.2.1
