@@ -10,18 +10,40 @@ Noir is a decentralized digital currency created to ensure your transactions are
 
 Docker hub tags ( `fentas/crypto` )
 
-- `noir-v1.0.0.0`, `noir-latest`
+- `noir-v1.0.0.1`, `noir-v1.0.0.0`, `noir-latest`
 
 ## Noirnode
 
-... comming soon
+First of all make sure you [prepared](../README.md#masternode) your masternode.
+
+You need to allow the ghostnode to communicate.
+
+```sh
+ufw allow 8255/tcp
+```
+
+And finally start it up.
+
+```sh
+mkdir -p $HOME/.nix
+docker run -d --name noirnode \
+  -p "8255:8255" \
+  -v "$HOME/.noir:/.noir" \
+  fentas/crypto:ghostnode
+
+watch docker exec ghostnode noir-cli getnetworkinfo
+cat $HOME/.noir/noir.conf
+```
+
+Now setup your local `.noir/noirnode.conf` and start the node.
+More detailed description will follow.
 
 ## Mining
 
 ```bash
 docker run -d --restart always --name zoin fentas/cpuminer-opt \
-  -a lyra2zoin \
-  -o stratum+tcp://pool.zoin.netabuse.net:3000 \
+  -a lyra2z330 \
+  -o stratum+tcp://noir.pools.netabuse.net:3000 \
   -u ZQ12tQnAV5BBnuXXa3NRCLACxMQgHVz3pd.donations -p x
 ```
 
