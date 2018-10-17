@@ -27,7 +27,7 @@ And finally start it up.
 ```sh
 mkdir -p $HOME/.fox
 docker run -d --name foxnode \
-  -p "40428:40428" \
+  --network host \
   -v "$HOME/.fox:/.fox" \
   fentas/crypto:foxnode
 

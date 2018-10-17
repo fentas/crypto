@@ -37,15 +37,19 @@ if [ -f /bootstrap.sh ]; then
 fi
 
 if [ ! -f /root/.${PROJECT}/${PROJECT}.conf ]; then
-  ${DEAMON_BIN} -daemon
-  until ${CLI_BIN} getnetworkinfo 2>/dev/null; do sleep 1; done
-  PRIVKEY="${PRIVKEY:-$(${CLI_BIN} ${MN_CMD} genkey)}"
-  ${CLI_BIN} stop
 cat <<EOF > /root/.${PROJECT}/${PROJECT}.conf
 rpcuser=${RPC_USER}
 rpcpassword=${PRC_PASSWORD}
 rpcallowip=${RPC_ALLOW_IP}
 rpcport=${RPC_PORT}
+EOF
+
+  ${DEAMON_BIN} -daemon
+  until ${CLI_BIN} getnetworkinfo 2>/dev/null; do sleep 1; done
+  PRIVKEY="${PRIVKEY:-$(${CLI_BIN} ${MN_CMD} genkey)}"
+  ${CLI_BIN} stop
+
+cat <<EOF >> /root/.${PROJECT}/${PROJECT}.conf
 port=${MN_PORT}
 listen=1
 server=1
@@ -53,17 +57,16 @@ daemon=0
 logtimestamps=1
 maxconnections=256
 txindex=1
-${MN_NAME}=1
-externalip=${EXTERNAL_IP}
+externalip=${EXTERNAL_IP}:${MN_PORT}
 masternodeaddr=${EXTERNAL_IP}
-bind=${EXTERNAL_IP}:${MN_PORT}
-${MN_NAME}privkey=${PRIVKEY}
 addnode=192.241.194.150:40428
 addnode=178.128.2.124:40428
 addnode=37.139.25.58:40428
 addnode=206.189.100.225:40428
 addnode=159.65.139.141:40428
 addnode=178.128.32.73:40428
+${MN_NAME}=1
+${MN_NAME}privkey=${PRIVKEY}
 EOF
 fi
 
