@@ -10,7 +10,6 @@ RUN set -ex \
   && ./autogen.sh \
   && ./configure --without-gui \
   && make CFLAGS=-fPIC \
-  && make check \
   && make install \
   && cd .. \
   && rm -R ./smartfox
