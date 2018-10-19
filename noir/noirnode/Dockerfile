@@ -1,6 +1,6 @@
 FROM fentas/crypto:mn-fullnode
 
-ENV VERSION=v1.0.0.1
+ENV VERSION=v1.0.0.2
 
 # Compile wallet
 RUN set -ex \
@@ -18,7 +18,7 @@ RUN set -ex \
 COPY ./bootstrap.sh /
 COPY ./entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["noird"]
+CMD ["-reindex"]
 
 ENV PROJECT "noir"
 ENV MN_NAME "nnode"

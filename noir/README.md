@@ -10,7 +10,7 @@ Noir is a decentralized digital currency created to ensure your transactions are
 
 Docker hub tags ( `fentas/crypto` )
 
-- `noir-v1.0.0.1`, `noir-v1.0.0.0`, `noir`
+- `noir-v1.0.0.2`, `noir-v1.0.0.1`, `noir-v1.0.0.0`, `noir`
 
 ## Noirnode
 
