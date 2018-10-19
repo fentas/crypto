@@ -15,11 +15,10 @@ set -e
 : ${RPC_ALLOW_IP:=127.0.0.1}
 : ${EXTERNAL_IP:=$(curl --connect-timeout 2 -s4 https://icanhazip.com)}
 
-if [ "$1" != "${DEAMON_BIN}" ]; then
-  exec "$@"
-fi
 if [ "${1:0:1}" = '-' ]; then
 	set -- "${DEAMON_BIN}" "$@"
+elif [ "$1" != "${DEAMON_BIN}" ]; then
+  exec "$@"
 fi
 
 if [ -d "/.${PROJECT}" ] && [ ! -d "/root/.${PROJECT}" ]; then
