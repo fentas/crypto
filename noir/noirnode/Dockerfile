@@ -18,7 +18,6 @@ RUN set -ex \
 COPY ./bootstrap.sh /
 COPY ./entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["-reindex"]
 
 ENV PROJECT "noir"
 ENV MN_NAME "nnode"
