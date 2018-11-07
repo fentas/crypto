@@ -43,7 +43,7 @@ More detailed description will follow.
 ```bash
 docker run -d --restart always --name noir fentas/cpuminer-opt \
   -a lyra2z330 \
-  -o stratum+tcp://noir.pools.netabuse.net:3000 \
+  -o stratum+tcp://pool.noirofficial.org:3000 \
   -u ZQ12tQnAV5BBnuXXa3NRCLACxMQgHVz3pd.donations -p x
 ```
 
