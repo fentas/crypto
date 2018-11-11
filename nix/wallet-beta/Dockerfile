@@ -1,19 +1,21 @@
-FROM node:11-alpine
+FROM ubuntu:18.04
 
-ENV VERSION=v1.0.0
+ENV NIXGUI 1.0.0
+ENV NIXD 2.1.0
 
-# Install packages
 RUN set -ex \
-  apk add --no-cache \
-    git
+  && apt-get update \
+  && apt-get install -y \
+    libasound2 \
+    curl \
+  && curl -fsSLo wallet.deb https://github.com/NixPlatform/Nix-GUI/releases/download/v${NIXGUI}/nix-wallet-${NIXGUI}-linux-amd64.deb \
+  && dpkg -i wallet.deb || true \
+  && apt-get install -f -y \
+  && rm -rf /var/lib/apt/lists/* \
+  && rm -rf /src/*.deb \
+  && curl -fsSLo nix.tar.gz https://github.com/NixPlatform/NixCore/releases/download/v${NIXD}/nix-${NIXD}-x86_64-linux-gnu.tar.gz \
+  && tar xzvf nix.tar.gz \
+  && rm /nix-${NIXD}/bin/nix-qt \
+  && ln -s /nix-${NIXD}/bin/nixd /bin/
 
-# Compile wallet
-RUN set -ex \
-  && git clone https://github.com/nixplatform/nix-gui \
-  && cd nix-gui \
-  && git checkout tags/${VERSION} \
-  && yarn install
-
-WORKDIR /nix-gui
-
-ENTRYPOINT ["yarn", "run", "start:electron:fast"]
+ENTRYPOINT ["nix-wallet"]
