@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-ENV NIXGUI 1.0.0
+ENV NIXGUI 1.0.1
 ENV NIXD 2.1.0
 
 RUN set -ex \
