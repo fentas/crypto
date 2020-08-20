@@ -8,9 +8,9 @@ if [ -f "/root/.${PROJECT}/chainstate/CURRENT" ];then
   exit 0
 fi
 
-curl -fsSLo Blockchain.zip https://github.com/noirofficial/noir/releases/download/v1.0.0.2/Blockchain.zip
-unzip Blockchain.zip
+curl -fsSLo Blockchain.tar.gz https://blockchain.noirofficial.org/bootstraps/noir-blockchain-2020-08-20.tar.gz
+tar -xzvf Blockchain.tar.gz
 mv ./blocks ./chainstate ./peers.dat /root/.${PROJECT}/
-rm -R ./Blockchain.zip
+rm -R ./Blockchain.tag.gz
 
 echo "[bootstrap] All done."

@@ -3,4 +3,4 @@ exec docker run --rm --privileged --net=host --env="DISPLAY" \
   -v "${HOME}/.Xauthority:/root/.Xauthority:rw" \
   -v "${HOME}/.nix:/root/.nix:rw" \
   -v "${HOME}/.nix/.config:/root/.config:rw" \
-  fentas/crypto:nix-v2.3.1.0
+  fentas/crypto:nix-v3.0.8
