@@ -1,5 +1,7 @@
 FROM ubuntu:18.04
 
+ENV LC_CTYPE=en_US.UTF-8
+
 # Qt fullnode wallet dependencies
 RUN set -ex \
   && apt-get update \
