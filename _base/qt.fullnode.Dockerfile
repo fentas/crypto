@@ -1,6 +1,9 @@
 FROM ubuntu:18.04
 
 ENV LC_CTYPE=en_US.UTF-8
+ENV LANGUAGE=en_US.UTF-8
+ENV LANG=en_US.UTF-8
+ENV LC_ALL=en_US.UTF-8
 
 # Qt fullnode wallet dependencies
 RUN set -ex \
@@ -19,4 +22,5 @@ RUN set -ex \
     qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler libqrencode-dev \
     git unzip curl \
   && apt-get autoremove -y \
-  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+  && locale-gen en_US.UTF-8
