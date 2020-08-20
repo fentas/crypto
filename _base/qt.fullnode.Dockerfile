@@ -13,7 +13,7 @@ RUN set -ex \
   && apt-get update \
   && apt-get install dirmngr -y --install-recommends \
   && apt-get install -y \
-    build-essential libtool autotools-dev automake pkg-config \
+    build-essential libtool autotools-dev automake pkg-config locales \
     libssl-dev libevent-dev bsdmainutils libboost-all-dev \
     software-properties-common \
     libdb4.8-dev libdb4.8++-dev \
